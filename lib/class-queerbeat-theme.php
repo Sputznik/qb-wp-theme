@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * BOOTSTRAPS THEME SPECIFIC FUNCTIONALITIES
+ */
+class QUEERBEAT_THEME {
+
+  public function __construct() {
+
+    add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );  // LOAD ASSETS
+    add_filter('the_posts', array( $this, 'show_scheduled_posts' ) ); // SHOW SCHEDULED POSTS IN SINGLE.PHP
+
+    /* ADD SOW FROM THE THEME */
+    add_action('siteorigin_widgets_widget_folders', function( $folders ){
+      $folders[] = QUEERBEAT_THEME_PATH.'/so-widgets/';
+      return $folders;
+    } );
+
+    
+    // Load scripts (color picker + live icon preview)
+    add_action('admin_enqueue_scripts', function ($hook) {
+        if (strpos($hook, 'edit-tags.php') !== false || strpos($hook, 'term.php') !== false) {
+            wp_enqueue_style('wp-color-picker');
+            wp_enqueue_script('wp-color-picker');
+            wp_enqueue_style('boxicons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+            wp_add_inline_script('wp-color-picker', "
+                jQuery(document).ready(function($){
+                    $('.color-picker').wpColorPicker();
+                    $('#category_icon').on('input', function(){
+                        $('#bx-icon-preview').attr('class', $(this).val());
+                    });
+                });
+            ");
+        }
+    });
+
+    // Add custom post type support for scheduled posts
+    add_filter('pre_get_posts', function($query) {
+      if (is_single() && $query->is_main_query()) {
+        $query->set('post_status', array('publish', 'future'));
+      }
+    });
+
+  }
+
+  function assets() {
+
+    // ENQUEUE STYLES
+    wp_enqueue_style('gtc-core-css', QUEERBEAT_THEME_URI.'/assets/css/main.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION );
+    wp_enqueue_style( 'sp-fonts', QUEERBEAT_THEME_URI .'/assets/css/fonts.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION );
+    wp_enqueue_style('boxicons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+  }
+
+  function show_scheduled_posts( $posts ){
+    global $wp_query, $wpdb;
+
+    if( is_single() && $wp_query->post_count == 0 ){
+      $posts = $wpdb->get_results( $wp_query->request );
+    }
+
+    return $posts;
+  }
+
+}
+
+new QUEERBEAT_THEME;
