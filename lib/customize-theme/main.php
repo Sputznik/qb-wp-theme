@@ -1,16 +1,9 @@
 <?php
 
 	$inc_files = array(
-		// 'class-sp-customize.php',
 		'logo.php',
-		// 'social_media.php',
-		// 'background.php',
-		// 'fonts.php',
 		'single-post.php',
-		'taxonomy.php',
-		'archive.php',
-		// 'author.php',
-		// 'footer.php'
+		// 'taxonomy.php',
 	);
 
 	foreach($inc_files as $inc_file){

@@ -22,7 +22,7 @@ class QUEERBEAT_THEME {
         if (strpos($hook, 'edit-tags.php') !== false || strpos($hook, 'term.php') !== false) {
             wp_enqueue_style('wp-color-picker');
             wp_enqueue_script('wp-color-picker');
-            wp_enqueue_style('boxicons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+            wp_enqueue_style('boxicons', 'https://unpkg.com/boxicons@latest/css/boxicons.min.css');
 
             wp_add_inline_script('wp-color-picker', "
                 jQuery(document).ready(function($){
@@ -49,7 +49,8 @@ class QUEERBEAT_THEME {
     // ENQUEUE STYLES
     wp_enqueue_style('gtc-core-css', QUEERBEAT_THEME_URI.'/assets/css/main.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION );
     wp_enqueue_style( 'sp-fonts', QUEERBEAT_THEME_URI .'/assets/css/fonts.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION );
-    wp_enqueue_style('boxicons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+    wp_enqueue_style('qb-theme-shortcode', QUEERBEAT_THEME_URI . '/assets/css/qb-theme-shortcode.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
+    wp_enqueue_style('boxicons', 'https://unpkg.com/boxicons@latest/css/boxicons.min.css', array(), null);
   }
 
   function show_scheduled_posts( $posts ){

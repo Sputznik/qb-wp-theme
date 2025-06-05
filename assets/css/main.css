@@ -294,8 +294,8 @@
 /* === Featured Image === */
 .single-template-8 .featured-image {
   width: 100%;
-  height: auto;
-  max-height: 450px;
+  /* height: auto;
+  max-height: 450px; */
   object-fit: cover;
   display: block;
 }
@@ -316,7 +316,7 @@
 }
 
 .single-template-8 .post-category {
-  color: #8a3b3a;
+  /* color: #8a3b3a; */
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
@@ -511,4 +511,25 @@
 .share-inline .a2a_kit a {
   display: flex !important;
   height: inherit;
+}
+
+/* contributors css in single8.php */
+.contributors-container {
+  max-width: 800px;
+  height: 140px;
+  margin: 30px auto;
+  border-top: 2px solid #8a3b3a;
+  border-bottom: 2px solid #8a3b3a;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem; /* Optional: emulate Bootstrap 5's gap */
 }

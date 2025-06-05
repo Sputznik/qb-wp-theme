@@ -14,13 +14,11 @@
     }
 
     $inc_files = array(
-        // 'inc/post-types/news-article.php',
-        // 'inc/taxonomies/news-category.php',
-        // 'inc/meta-boxes/news-meta-box.php',
         'lib/class-queerbeat-theme.php',
         'lib/customize-theme/main.php',
         'lib/qb-orbit-cf.php',
         'lib/qb-category-cf.php',
+        'lib/shortcodes/qb-themes.php',
     );
 
     foreach ($inc_files as $inc_file) {

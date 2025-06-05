@@ -1,37 +1,64 @@
 <?php
-
-/* <div class="container" style="margin-top: 80px;">
-  <div class="row">
-    <div class='col-sm-12'>
-      <?php if (have_posts()) : ?>
-      <ul class='orbit-two-grid' style='margin-bottom:50px; padding-left: 0;'>
-        <?php while (have_posts()) : the_post(); ?>
-        <li class="orbit-article-db orbit-list-db">
-          <?php get_template_part('partials/post', 'common');?>
-        </li>
-        <?php endwhile; ?>
-      </ul>
-      <?php endif; ?>
-    </div>
-  </div>  
-</div>
-
-*/
-
-/**
- * The template for displaying category page
- */
 get_header();
-$category = $wp_query->get_queried_object();
+
+$selected_tag = isset($_GET['tag']) ? sanitize_text_field($_GET['tag']) : '';
+$selected_format = isset($_GET['format']) ? sanitize_text_field($_GET['format']) : '';
 ?>
 <div class="category-header archive-header wrapper-margin gtc-page-header-bg">
   <div class="container">
-    <h1 class="page-title text-capitalize text-center"><?php _e( $category->name ); ?></h1>
+    <h1 class="page-title text-capitalize text-center">
+      <?php echo $selected_format ? ucfirst(str_replace('-', ' ', $selected_format)) : 'All Formats'; ?>
+    </h1>
   </div>
 </div>
+
 <div class="container">
+  <form method="get" id="filter-form" style="margin-bottom: 30px;">
+    <label for="format">Filters :</label>
+    <select name="format" id="format" onchange="document.getElementById('filter-form').submit();">
+      <option value="">Format</option>
+      <?php
+      $formats = get_terms(array(
+        'taxonomy' => 'formats',
+        'hide_empty' => false
+      ));
+      foreach ( $formats as $format ) {
+        $selected = ($selected_format === $format->slug) ? 'selected' : '';
+        echo "<option value='{$format->slug}' $selected>{$format->name}</option>";
+      }
+      ?>
+    </select>
+
+    <label for="tag" style="margin-left: 20px;">Tag:</label>
+    <select name="tag" id="tag" onchange="document.getElementById('filter-form').submit();">
+      <option value="">Theme</option>
+      <?php
+      $tags = get_tags();
+      foreach ( $tags as $tag ) {
+        $selected = ($selected_tag === $tag->slug) ? 'selected' : '';
+        echo "<option value='{$tag->slug}' $selected>{$tag->name}</option>";
+      }
+      ?>
+    </select>
+  </form>
+
   <div class="articles-post-list-wrap">
-    <?php echo do_shortcode("[orbit_query posts_per_page='6' style='grid2' cat='".$category->term_id."' pagination='1']"); ?>
+    <?php
+    $shortcode = "[orbit_query posts_per_page='6' style='grid2' pagination='1'";
+
+    if ( $selected_tag ) {
+      $shortcode .= " tag='" . esc_attr($selected_tag) . "'";
+    }
+
+    if ( $selected_format ) {
+      $shortcode .= " tax_query='formats:" . esc_attr($selected_format) . "'";
+    }
+
+    $shortcode .= "]";
+
+    echo do_shortcode($shortcode);
+    ?>
   </div>
 </div>
+
 <?php get_footer(); ?>
