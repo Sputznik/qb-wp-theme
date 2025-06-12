@@ -9,7 +9,7 @@ add_action('category_add_form_fields', function () {
     </div>
     <div class="form-field">
         
-        <label for="category_icon"><a href="https://v2.boxicons.com/" target="_blank" rel="noopener noreferrer">Box Icon</a> is a free icon library. You can find icons there.</label>
+        <label for="category_icon"><a href="https://boxicons.com/icons/" target="_blank" rel="noopener noreferrer">Click here</a> to find box icon class names.</label>
         <input type="text" name="category_icon" id="category_icon" />
         <p class="description">e.g., bx bx-star. Preview: <i id="bx-icon-preview" class=""></i></p>
     </div>
@@ -31,7 +31,9 @@ add_action('category_edit_form_fields', function ($term) {
         <td><input type="text" name="category_bg_color" id="category_bg_color" value="<?php echo esc_attr($bg_color); ?>" class="color-picker" /></td>
     </tr>
     <tr class="form-field">
-        <th scope="row"><label for="category_icon">Boxicons Icon</label></th>
+        <th scope="row">
+            <label for="category_icon"><a href="https://boxicons.com/icons/" target="_blank" rel="noopener noreferrer">Click here</a> to find box icon class names.</label>
+        </th>
         <td>
             <input type="text" name="category_icon" id="category_icon" value="<?php echo esc_attr($icon); ?>" />
             <p class="description">Preview: <i id="bx-icon-preview" class="<?php echo esc_attr($icon); ?>" style="color:<?php echo esc_attr($text_color); ?>;"></i></p>

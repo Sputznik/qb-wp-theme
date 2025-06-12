@@ -34,3 +34,11 @@ Display 6 categories:
 ---
 
 For more details, see the code in `lib/shortcodes/qb-themes.php`.
+
+### To show the single hero post on homepage by using orbit_query
+
+Display 1 responsive post use:
+
+```
+[orbit_query style="hero" posts_per_page="1"]
+```
