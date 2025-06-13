@@ -23,11 +23,11 @@
             <div class="qb-topbar">
             <div class="qb-left">
                 <?php if ( isset($option['has_search_icon']) && $option['has_search_icon'] == 1 ) : ?>
-                <a href="#" class="header-search-icon">
-                <i class="fa fa-search" data-toggle="modal" data-target="#search-modal">
-                    <span>Search</span>
-                </i>
-                </a>
+                <div href="#" class="header-search-icon" data-toggle="modal" data-target="#search-modal">
+                <i class="bx bx-search"></i>
+                <span>Search</span>
+                </div>
+
                 <?php endif; ?>
             </div>
 

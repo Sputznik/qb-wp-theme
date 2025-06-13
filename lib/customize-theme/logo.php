@@ -57,9 +57,22 @@
                 $cta_text = !empty( $option['cta_button_text'] ) ? esc_html( $option['cta_button_text'] ) : '';
                 $cta_url  = !empty( $option['cta_button_url'] ) ? esc_url( $option['cta_button_url'] ) : '#';
 
+                $show_search = isset($option['has_search_icon']) && $option['has_search_icon'] == 1;
+
                 // Append CTA to menu
                 if ( $show_cta && $cta_text ) {
                     $items .= '<li id="join-cta" class="menu-item sp-cta"><a href="' . $cta_url . '" target="_blank">' . $cta_text . '</a></li>';
+                }
+
+                // Append SEARCH to menu
+                if ( $show_search) {
+                    $items .= '<li id="search-cta" class="menu-item sp-cta">
+                                    <a href="#" data-toggle="modal" data-target="#search-modal">
+                                        <i class="bx bx-search"></i>
+                                        <span>Search</span>
+                                    </a>
+                                </li>';
+
                 }
             }
 

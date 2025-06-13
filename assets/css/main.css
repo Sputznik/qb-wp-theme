@@ -39,11 +39,22 @@
   margin-bottom: 10px;
 }
 
-.header-search-icon i span {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: gray;
-  font-size: 14px;
+.header-search-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.header-search-icon i {
+  font-size: 20px;
+  line-height: 1;
+  color: #000;
+}
+
+.header-search-icon span {
+  font-size: 18px;
+  color: #666666;
 }
 
 /* Header 4 */
@@ -102,6 +113,12 @@
     color: #fff;
   }
 
+  #search-cta a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
   .navbar .dropdown-menu > li > a {
     padding-left: 40px;
   }
@@ -119,6 +136,9 @@
 }
 @media (min-width: 768px) {
   #join-cta {
+    display: none;
+  }
+  #search-cta {
     display: none;
   }
   .header5.navbar .dropdown-menu > .active > a {
@@ -486,13 +506,12 @@
 }
 
 .load-more::before {
-  content: "\eb45";
-  font-family: "boxicons";
+  content: "\f4a6";
+  font-family: "boxicons-rounded";
   font-size: 24px;
   margin-right: 5px;
   display: inline-block;
   vertical-align: middle;
-  /* animation: spin 3s linear infinite; */
 }
 
 /* AddToAny Share CSS Settings */
@@ -532,4 +551,53 @@
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem; /* Optional: emulate Bootstrap 5's gap */
+}
+
+.orbit-one-grid {
+  padding-left: 0;
+}
+
+/* search form on search.php template  */
+.custom-search-form-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.search-field {
+  padding: 8px;
+  width: 300px;
+}
+
+.search-submit {
+  background-color: #000;
+  border-radius: 0;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .custom-search-form-wrap {
+    padding: 0 15px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-field,
+  .search-submit {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
