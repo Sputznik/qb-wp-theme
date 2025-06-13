@@ -558,6 +558,7 @@
 }
 
 /* search form on search.php template  */
+/* Keep existing desktop styles as-is */
 .custom-search-form-wrap {
   display: flex;
   justify-content: center;
@@ -582,6 +583,10 @@
   border: none;
   padding: 8px 16px;
   cursor: pointer;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  white-space: nowrap;
 }
 
 /* Responsive for mobile */
@@ -591,13 +596,27 @@
   }
 
   .search-form {
-    flex-direction: column;
+    flex-direction: row; /* Keep row layout */
     width: 100%;
+    gap: 5px;
   }
 
-  .search-field,
-  .search-submit {
-    width: 100%;
+  .search-field {
+    flex: 1;
+    width: auto;
     box-sizing: border-box;
+  }
+
+  .search-submit {
+    width: auto;
+    padding: 8px;
+  }
+
+  .search-submit::after {
+    content: "";
+  }
+
+  .search-submit i + span {
+    display: none; /* Hide text next to icon if you add it as span */
   }
 }

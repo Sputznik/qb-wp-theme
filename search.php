@@ -26,11 +26,13 @@ wp_reset_postdata();
 <div class="container">
 	<!-- Search form -->
 	<div class="custom-search-form-wrap">
-	<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<input type="search" class="search-field" placeholder="Search …" value="<?php echo esc_attr( $search_term ); ?>" name="s" />
-		<button type="submit" class="search-submit">Search</button>
-	</form>
-	</div>
+    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+      <input type="search" class="search-field" placeholder="Search …" value="<?php echo esc_attr( $search_term ); ?>" name="s" />
+      <button type="submit" class="search-submit">
+        <i class='bx bx-search'></i> <span>Search</span>
+      </button>
+    </form>
+  </div>
 	
   <h1 class="page-title">
     <?php 
