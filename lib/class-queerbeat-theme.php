@@ -16,6 +16,27 @@ class QUEERBEAT_THEME {
       return $folders;
     } );
 
+
+    function add_user_id_column($columns) {
+        $columns['user_id'] = 'User ID';
+        return $columns;
+    }
+    add_filter('manage_users_columns', 'add_user_id_column');
+
+    function show_user_id_column_content($value, $column_name, $user_id) {
+        if ($column_name === 'user_id') {
+            return $user_id;
+        }
+        return $value;
+    }
+    add_action('manage_users_custom_column', 'show_user_id_column_content', 10, 3);
+
+    function make_user_id_column_sortable($columns) {
+        $columns['user_id'] = 'ID';
+        return $columns;
+    }
+    add_filter('manage_users_sortable_columns', 'make_user_id_column_sortable');
+
     
     // Load scripts (color picker + live icon preview)
     add_action('admin_enqueue_scripts', function ($hook) {

@@ -15,52 +15,58 @@ add_filter( 'orbit_taxonomy_vars', function( $orbit_tax ) {
 });
 
 /* Add custom fields (meta boxes) for posts */
-add_filter( 'orbit_meta_box_vars', function( $meta_box ) {
+add_filter('orbit_meta_box_vars', function ($meta_box) {
+    $user_options = [];
+    foreach (get_users() as $user) {
+        $user_options[$user->ID] = $user->display_name;
+    }
 
-  $meta_box['post'][] = array(
-    'id'     => 'post-language-urls',
-    'title'  => 'Language URLs',
-    'fields' => array(
-      'hindi_post_url' => array(
-        'type' => 'text',
-        'text' => 'Hindi Post URL'
-      ),
-      'english_post_url' => array(
-        'type' => 'text',
-        'text' => 'English Post URL'
-      )
-    )
-  );
+     $meta_box['post'][] = array(
+        'id'     => 'post-language-urls',
+        'title'  => 'Language URLs',
+        'fields' => array(
+          'hindi_post_url' => array(
+            'type' => 'text',
+            'text' => 'Hindi Post URL'
+          ),
+          'english_post_url' => array(
+            'type' => 'text',
+            'text' => 'English Post URL'
+          )
+        )
+      );
 
-  $meta_box['post'][] = array(
-    'id'     => 'post-contributors',
-    'title'  => 'Contributors',
-    'fields' => array(
-      'author'       => array(
-        'type' => 'text',
-        'text' => 'Author'
-      ),
-      'editor'       => array(
-        'type' => 'text',
-        'text' => 'Editor'
-      ),
-      'illustrator'  => array(
-        'type' => 'text',
-        'text' => 'Illustrator'
-      ),
-      'photographer' => array(
-        'type' => 'text',
-        'text' => 'Photographer'
-      ),
-      'producer'     => array(
-        'type' => 'text',
-        'text' => 'Producer'
-      )
-    )
-  );
+    $meta_box['post'][] = array(
+        'id'     => 'post-contributors',
+        'title'  => 'Contributors',
+        'fields' => array(
+            'author' => array(
+                'type'    => 'text',
+                'text'    => 'Author User IDs (comma separated)',
+            ),
+            'editor' => array(
+                'type'    => 'text',
+                'text'    => 'Editor User IDs (comma separated)',
+            ),
+            'illustrator' => array(
+                'type'    => 'text',
+                'text'    => 'Illustrator User IDs (comma separated)',
+            ),
+            'photographer' => array(
+                'type'    => 'text',
+                'text'    => 'Photographer User IDs (comma separated)',
+            ),
+            'producer' => array(
+                'type'    => 'text',
+                'text'    => 'Producer User IDs (comma separated)',
+            )
+        ),
+        'desc'   => ''
+    );
 
-  return $meta_box;
+    return $meta_box;
 });
+
 
 add_action('add_meta_boxes', function() {
     remove_meta_box('formatsdiv', 'post', 'side');
