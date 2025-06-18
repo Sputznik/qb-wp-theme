@@ -684,3 +684,22 @@
     display: inline-block;
   }
 }
+
+/* author.php styles */
+.author-header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.author-name {
+  margin: 0 0 10px 0;
+  text-transform: capitalize;
+}
+
+.author-bio {
+  margin-bottom: 10px;
+}
+
+.articles-post-list-wrap {
+  margin-top: 40px;
+}
