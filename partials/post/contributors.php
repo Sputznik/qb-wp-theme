@@ -40,7 +40,7 @@ foreach ( $contributor_roles as $role_key => $role_label ) {
             <?php
             $names = [];
             foreach ( $users as $user ) {
-              $names[] = '<a href="' . esc_url( $user['url'] ) . '">' . esc_html( $user['name'] ) . '</a>';
+              $names[] = '<a rel="author" href="' . esc_url( $user['url'] ) . '">' . esc_html( $user['name'] ) . '</a>';
             }
             echo implode( ',&nbsp;&nbsp;', $names );
             ?>
