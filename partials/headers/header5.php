@@ -8,7 +8,7 @@
 
 
 <nav class="navbar header5">
-  <div class="container">
+  <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="menu-text">MENU</span>
