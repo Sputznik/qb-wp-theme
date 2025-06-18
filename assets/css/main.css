@@ -532,20 +532,6 @@
   height: inherit;
 }
 
-/* contributors css in single8.php */
-.contributors-container {
-  max-width: 800px;
-  height: 140px;
-  margin: 30px auto;
-  border-top: 2px solid #8a3b3a;
-  border-bottom: 2px solid #8a3b3a;
-  text-align: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .btn-view-all {
   display: flex;
   align-items: center;
@@ -618,5 +604,83 @@
 
   .search-submit i + span {
     display: none; /* Hide text next to icon if you add it as span */
+  }
+}
+
+/* contributors css  */
+
+.contributors-container {
+  text-align: center;
+  margin: 40px auto;
+  border-top: 2px solid #8a3b3a;
+  border-bottom: 2px solid #8a3b3a;
+  max-width: 800px;
+  padding: 15px 0;
+}
+
+.contributors-inner {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  flex-direction: row;
+}
+
+.contributor strong {
+  font-weight: bold;
+}
+
+.contributor-names {
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+  font-family: "Lora";
+}
+
+.contributor-names a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contributor-role {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Vertically center the "Contributors" label on desktop */
+.contributor:first-child {
+  justify-content: center;
+  font-family: "Lora";
+}
+
+/* On small screens: stack vertically and move label on top */
+@media screen and (max-width: 600px) {
+  .contributors-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .contributor:first-child {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .contributors-container,
+  .contributors-inner,
+  .contributor {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .contributor:first-child {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .contributor-names a {
+    display: inline-block;
   }
 }

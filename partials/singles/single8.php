@@ -47,9 +47,8 @@
         <?php echo do_shortcode('[addtoany]'); ?>
       </div>
 
-      <div class="contributors-container">
-        Space for contributors' names, if any.
-      </div>
+      <?php get_template_part( 'partials/post/contributors' ); ?>
+
 
       <div class="post-body">
         <?php the_content(); ?>
