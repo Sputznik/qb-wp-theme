@@ -3,7 +3,14 @@
     global $sp_customize;
 
     $post_type = get_post_type();
-    $template_name = $sp_customize->get_single_template( $post_type );
+
+    // Check for per-post template selection
+    $post_template = get_post_meta(get_the_ID(), '_qb_single_template', true);
+    if ($post_template) {
+        $template_name = $post_template;
+    } else {
+        $template_name = $sp_customize->get_single_template( $post_type );
+    }
     $template_path = 'partials/singles/' . $template_name . '.php';
 
     // Use locate_template to support child theme templates
@@ -17,11 +24,6 @@
         require_once( $single_template );
     } else {
         echo '<p>Template not found: ' . esc_html( $template_path ) . '</p>';
-    }
-
-    // Optional widget area
-    if ( is_active_sidebar( 'single-post-footer' ) ) {
-        dynamic_sidebar( 'single-post-footer' );
     }
 ?>
 <?php get_footer(); ?>
