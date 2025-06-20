@@ -1,5 +1,5 @@
 <?php 
-    $sp_customize;
+    global $sp_customize;
     $option = $sp_customize->get_option();
     $show_cta = isset($option['has_cta_button']) && $option['has_cta_button'] == 1;
     $cta_text = !empty($option['cta_button_text']) ? esc_html($option['cta_button_text']) : '';
