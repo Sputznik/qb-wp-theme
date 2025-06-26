@@ -15,13 +15,25 @@ $author_bio   = get_the_author_meta('description', $author_id);
     <div class="author-info">
       <h1 class="author-name"><?php echo esc_html($display_name); ?></h1>
 
-      <?php if (!empty($author_bio)) : ?>
+        <?php if (!empty($author_bio)) : ?>
         <div class="author-bio">
           <p><?php echo esc_html($author_bio); ?></p>
         </div>
       <?php endif; ?>
+
+      <?php
+        $public_link = get_the_author_meta('public_link', $author_id);
+        if (!empty($public_link)) :
+      ?>
+        <div class="author-contact">
+          <p><strong>Get in touch:</strong>
+            <a href="<?php echo esc_url($public_link); ?>" target="_blank" rel="noopener">
+              Visit my public profile
+            </a>
+          </p>
+        </div>
+      <?php endif; ?>
     </div>
-    <hr>
   </div>
 </div>
 

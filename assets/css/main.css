@@ -291,7 +291,7 @@
   overflow: hidden;
   font-size: 22px;
   font-weight: 600;
-  line-height: 24.2px;
+  line-height: 28px;
 }
 
 .orbit-headline a {
@@ -497,8 +497,10 @@
 
 /* author.php styles */
 .author-header {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ddd;
 }
 
 .author-name {
@@ -511,5 +513,16 @@
 }
 
 .articles-post-list-wrap {
-  margin-top: 40px;
+  /* margin-top: 40px; */
+}
+
+/* custom field in author.php */
+.author-contact {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.author-contact a {
+  color: #0073aa;
+  text-decoration: none;
 }
