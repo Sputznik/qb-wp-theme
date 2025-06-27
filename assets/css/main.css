@@ -217,7 +217,7 @@
 .orbit-two-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  /* gap: 10px; */
   list-style: none;
   padding-left: 0;
 }
@@ -533,4 +533,21 @@
 .author-contact a {
   color: #0073aa;
   text-decoration: none;
+}
+
+/* support grid2 widget */
+.archive-inline-widget-area {
+  margin: 24px 0;
+  padding: 10px;
+}
+
+.archive-inline-widget-full {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+.navigation.pagination .nav-links {
+  padding: 0 50px;
 }
