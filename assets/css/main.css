@@ -428,6 +428,14 @@
   padding: 15px 0;
 }
 
+.credits-container {
+  margin: 7rem auto;
+  margin-bottom: 2rem;
+  border-top: 2px solid #8a3b3a;
+  border-bottom: 2px solid #8a3b3a;
+  max-width: 800px;
+}
+
 .contributors-inner {
   display: flex;
   justify-content: center;

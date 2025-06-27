@@ -26,10 +26,11 @@ $author_bio   = get_the_author_meta('description', $author_id);
         if (!empty($public_link)) :
       ?>
         <div class="author-contact">
-          <p><strong>Get in touch:</strong>
-            <a href="<?php echo esc_url($public_link); ?>" target="_blank" rel="noopener">
-              Visit my public profile
+          <p>Follow
+            <a href="<?php echo esc_url($public_link); ?>" target="_blank" rel="noopener" style="text-transform: capitalize;">
+              <strong><?php echo esc_html($display_name); ?> </strong>
             </a>
+            here.
           </p>
         </div>
       <?php endif; ?>

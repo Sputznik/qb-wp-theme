@@ -6,7 +6,7 @@ $contributor_roles = array(
   'editor'       => 'Editor',
   'illustrator'  => 'Illustrator',
   'photographer' => 'Photographer',
-  'producer'     => 'Producer'
+  // 'producer'     => 'Producer'
 );
 
 $grouped_contributors = [];

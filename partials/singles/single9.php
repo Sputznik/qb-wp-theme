@@ -65,6 +65,7 @@
 
       <div class="post-body">
         <?php the_content(); ?>
+        <?php get_template_part( 'partials/post/credits' ); ?>
       </div>
 
       <?php get_template_part( 'partials/post/related-posts' ); ?>
