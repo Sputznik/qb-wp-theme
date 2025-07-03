@@ -2,7 +2,7 @@
 get_header();
 ?>
 <div class="container">
-  <h1 class="page-title text-center">
+  <p class="heading-font heading-1 fw-bold text-center mb-32">
     <?php
       // Remove the 'Category:' or similar prefix from archive title
       $title = single_cat_title('', false);
@@ -11,7 +11,7 @@ get_header();
       }
       echo esc_html($title);
     ?>
-  </h1>
+  </p>
   <?php if (have_posts()) : ?>
   <?php
     global $wp_query;

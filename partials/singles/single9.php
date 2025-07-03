@@ -10,16 +10,17 @@
         }, $tags );
         $tag_output = implode( ', ', $tag_names );
         ?>
-        <div class="post-tags">
+        <div class="top-head">
+        <div class="post-tags body-font fw-semibold text-medium mb-32">
           <?php echo $tag_output; ?>
         </div>
       <?php endif; ?>
 
-      <h1 class="post-title"><?php the_title(); ?></h1>
+      <h1 class="post-title mt-0 mb-16 heading-1 heading-font fw-bold"><?php the_title(); ?></h1>
 
-        <div class="post-strapline"><?php echo get_the_excerpt(); ?></div>
+        <div class="post-strapline body-font text-large fw-normal"><?php echo get_the_excerpt(); ?></div>
 
-        <div class="post-meta">
+        <div class="post-meta body-font fw-normal text-medium mb-32">
           <?php echo get_the_date(); ?>
           <?php
           /*
@@ -31,15 +32,16 @@
         </div>
 
       <div class="share-inline">
-        <span class="share-label">SHARE</span>
+        <span class="body-font text-tiny fw-medium">SHARE</span>
         <?php echo do_shortcode('[addtoany]'); ?>
+      </div>
       </div>
 
       <?php if( has_post_thumbnail() ): ?>
         <img class="featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php the_title(); ?>">
       <?php endif; ?>
 
-      <div class="post-inner-wrap" style="display: none;">
+      <div class="temp-9-post-inner-wrap" style="display: none;">
         <div class="post-category">
           
 			<?php 

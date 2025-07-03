@@ -31,12 +31,12 @@ foreach ( $contributor_roles as $role_key => $role_label ) {
 <?php if ( ! empty( $grouped_contributors ) ) : ?>
   <div class="contributors-container">
     <div class="contributors-inner">
-      <div class="contributor">
+      <div class="contributor heading-font heading-6 fw-semibold">
         <strong>Contributors</strong>
       </div>
       <?php foreach ( $grouped_contributors as $role => $users ) : ?>
         <div class="contributor">
-          <div class="contributor-names">
+          <div class="contributor-names heading-font heading-6 fw-semibold">
             <?php
             $names = [];
             foreach ( $users as $user ) {
@@ -53,7 +53,7 @@ foreach ( $contributor_roles as $role_key => $role_label ) {
                 $role_label .= 's';
             }
             ?>
-            <div class="contributor-role"><?php echo esc_html( $role_label ); ?></div>
+            <div class="contributor-role body-font text-small fw-normal"><?php echo esc_html( $role_label ); ?></div>
         </div>
       <?php endforeach; ?>
     </div>

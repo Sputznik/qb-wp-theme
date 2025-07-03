@@ -1,3 +1,39 @@
+:root {
+  --space-0: 0;
+  --space-default: 32px;
+  --space-default-half: 16px;
+  --space-default-2-half: 8px;
+  --space-default-3-half: 4px;
+}
+
+.navbar {
+  margin-bottom: var(--space-default);
+}
+
+.container-fluid {
+  padding: 0 var(--space-default) !important;
+}
+
+.mb-32 {
+  margin-bottom: var(--space-default) !important;
+}
+.my-32 {
+  margin-bottom: var(--space-default) !important;
+  margin-top: var(--space-default) !important;
+}
+.mb-16 {
+  margin-bottom: var(--space-default-half) !important;
+}
+.mb-8 {
+  margin-bottom: var(--space-default-2-half) !important;
+}
+.mb-4 {
+  margin-bottom: var(--space-default-3-half) !important;
+}
+.mt-0 {
+  margin-top: var(--space-0) !important;
+}
+
 .menu-text {
   font-size: 20px;
   font-weight: bold;
@@ -262,8 +298,6 @@
   right: 10px;
   background-color: #f5f5f5;
   color: #2d2d2d;
-  /* font-size: 0.7rem;
-  font-weight: bold; */
   border-radius: 50px;
   padding: 4px 10px;
   text-transform: uppercase;
@@ -282,16 +316,11 @@
 }
 
 .orbit-headline {
-  line-height: 1.3;
-  font-weight: bold;
-  margin: 1rem 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 28px;
+  margin: 0;
 }
 
 .orbit-headline a {
@@ -300,14 +329,11 @@
 }
 
 .orbit-strapline {
-  font-family: "General Sans Variable", Arial, sans-serif !important;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: #404040;
-  font-size: 16px;
-  line-height: 17.6px;
 }
 
 .orbit-tag {
@@ -328,12 +354,13 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin: 40px 0;
+  align-items: center;
+  margin: var(--space-default) 0;
 }
 
 .share-inline .a2a_kit {
   display: flex !important;
-  gap: 10px;
+  gap: 8px;
 }
 
 .share-inline .a2a_kit a {
@@ -451,19 +478,14 @@
 }
 
 .contributor-names {
-  font-weight: bold;
-  color: #000;
   margin-bottom: 4px;
-  font-family: "Lora";
 }
 
 .contributor-names a {
   text-decoration: none;
-  color: #000;
 }
 
 .contributor-role {
-  font-size: 12px;
   color: #555;
 }
 
@@ -550,4 +572,13 @@
 
 .navigation.pagination .nav-links {
   padding: 0 50px;
+}
+
+.related-posts {
+  margin: var(--space-default) 0;
+  padding-top: 38px;
+}
+
+.orbit-content {
+  padding: 0 12px;
 }

@@ -43,13 +43,13 @@ foreach ( $contributor_roles as $role_key => $role_label ) {
       ?>
       
       <!-- Role -->
-      <div style="font-weight: bold; font-family: Lora; margin-bottom: 0.75rem;">
+      <div class="heading-font fw-semibold heading-6 mb-8">
         <?php echo esc_html( $role_label ); ?>
       </div>
 
       <!-- Users -->
       <?php foreach ( $users as $user ) : ?>
-        <div style="margin-bottom: 1rem;">
+        <div class="mb-8">
           <?php if ( ! empty( $user['name'] ) && ! empty( $user['url'] ) ) : ?>
             <div>
               <a rel="author" href="<?php echo esc_url( $user['url'] ); ?>" style="text-decoration: none; text-transform: capitalize;">

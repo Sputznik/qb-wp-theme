@@ -1,0 +1,140 @@
+/* === Font Families === */
+.heading-font {
+  font-family: "Lora", serif;
+}
+
+.body-font {
+  font-family: "General Sans Variable", sans-serif;
+}
+
+/* === Font Weights === */
+.fw-bold {
+  font-weight: 700;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+/* === Headings (Mobile First) === */
+.heading-1 {
+  font-size: 40px;
+  line-height: 120%;
+}
+
+.heading-2 {
+  font-size: 36px;
+  line-height: 120%;
+}
+
+.heading-3 {
+  font-size: 32px;
+  line-height: 120%;
+}
+
+.heading-4 {
+  font-size: 24px;
+  line-height: 140%;
+}
+
+.heading-5 {
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.heading-6 {
+  font-size: 18px;
+  line-height: 140%;
+}
+
+/* === Text Sizes: Mobile First === */
+.text-large {
+  font-size: 20px; /* behaves like text-medium */
+  line-height: 150%;
+}
+
+.text-medium {
+  font-size: 18px; /* behaves like text-regular */
+  line-height: 140%;
+}
+
+.text-regular {
+  font-size: 16px; /* behaves like text-small */
+  line-height: 140%;
+}
+
+.text-small {
+  font-size: 14px; /* behaves like text-tiny */
+  line-height: 120%;
+}
+
+.text-tiny {
+  font-size: 14px;
+  line-height: 120%;
+}
+
+/* === Desktop Overrides === */
+@media (min-width: 768px) {
+  .heading-1 {
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  .heading-2 {
+    font-size: 42px;
+    line-height: 120%;
+  }
+
+  .heading-3 {
+    font-size: 40px;
+    line-height: 120%;
+  }
+
+  .heading-4 {
+    font-size: 32px;
+    line-height: 130%;
+  }
+
+  .heading-5 {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  .heading-6 {
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  .text-large {
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  .text-medium {
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  .text-regular {
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  .text-small {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .text-tiny {
+    font-size: 14px;
+    line-height: 120%;
+  }
+}

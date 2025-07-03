@@ -34,7 +34,7 @@ wp_reset_postdata();
     </form>
   </div>
 	
-  <h1 class="page-title">
+  <p class="heading-font heading-1 fw-bold text-center mb-32">
     <?php 
       if ( $post_count > 0 ) {
           printf( __( '(%d) Search Results for: %s' ), $post_count, esc_html( $search_term ) );
@@ -42,7 +42,7 @@ wp_reset_postdata();
           echo __( 'Sorry, but nothing matched your search terms. Please try again with different keywords.' );
       }
     ?>
-  </h1>
+  </p>
   <hr/>
 </div>
 

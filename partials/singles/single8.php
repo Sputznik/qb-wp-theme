@@ -7,7 +7,7 @@
       <?php endif; ?>
 
       <div class="post-inner-wrap">
-        <div class="post-category">
+        <div class="post-category body-font fw-semibold text-medium mb-32">
           
 			<?php 
         $categories = get_the_category(); 
@@ -28,10 +28,10 @@
 
 		</div>
 
-        <h1 class="post-title"><?php the_title(); ?></h1>
-        <div class="post-strapline"><?php echo get_the_excerpt(); ?></div>
+        <h1 class="post-title mt-0 mb-16 heading-1 heading-font fw-bold"><?php the_title(); ?></h1>
+        <div class="post-strapline body-font text-large fw-normal"><?php echo get_the_excerpt(); ?></div>
 
-        <div class="post-meta">
+        <div class="post-meta body-font fw-normal text-medium mb-32">
           <?php echo get_the_date(); ?>
           <?php
             $terms = get_the_terms( get_the_ID(), 'formats' );
@@ -43,7 +43,7 @@
       </div>
 
       <div class="share-inline">
-        <span class="share-label">SHARE</span>
+        <span class="body-font text-tiny fw-medium">SHARE</span>
         <?php echo do_shortcode('[addtoany]'); ?>
       </div>
 
