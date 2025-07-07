@@ -8,7 +8,6 @@ class QUEERBEAT_THEME {
   public function __construct() {
 
     add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );  // LOAD ASSETS
-    add_filter('the_posts', array( $this, 'show_scheduled_posts' ) ); // SHOW SCHEDULED POSTS IN SINGLE.PHP
 
     /* ADD SOW FROM THE THEME */
     add_action('siteorigin_widgets_widget_folders', function( $folders ){
@@ -56,13 +55,6 @@ class QUEERBEAT_THEME {
         }
     });
 
-    // Add custom post type support for scheduled posts
-    add_filter('pre_get_posts', function($query) {
-      if (is_single() && $query->is_main_query()) {
-        $query->set('post_status', array('publish', 'future'));
-      }
-    });
-
     // Register archive Inline Widget area
     add_action('widgets_init', function() {
         register_sidebar([
@@ -87,16 +79,6 @@ class QUEERBEAT_THEME {
     wp_enqueue_style('qb-theme-singles', QUEERBEAT_THEME_URI . '/assets/css/qb-single-templates.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
     wp_enqueue_style('boxicons', 'https://pro.boxicons.com/fonts/3.0.1/basic/rounded/400/boxicons-rounded.min.css?sig=7128fd87b9be0e56ca3bc7c681f7f01f6da119ff687204ab230f0ed33d3f1304', array(), QUEERBEAT_WP_THEME_VERSION);
     wp_enqueue_style('qb-theme-typography', QUEERBEAT_THEME_URI . '/assets/css/qb-typography.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
-  }
-
-  function show_scheduled_posts( $posts ){
-    global $wp_query, $wpdb;
-
-    if( is_single() && $wp_query->post_count == 0 ){
-      $posts = $wpdb->get_results( $wp_query->request );
-    }
-
-    return $posts;
   }
 
 }

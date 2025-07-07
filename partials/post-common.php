@@ -25,7 +25,12 @@
 
 	<div class="orbit-content">
 		<div class="orbit-meta">
-			<span class="body-font text-tiny fw-medium"><?php the_author(); ?></span>
+			<span class="body-font text-tiny fw-medium">
+				<?php
+				// the_author();
+				echo do_shortcode('[orbit_coauthors]');
+				?>
+			</span>
 			<span class="body-font text-tiny fw-medium"><?php echo get_the_date('d M Y'); ?></span>
 		</div>
 

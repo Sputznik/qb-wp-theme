@@ -9,12 +9,14 @@
           return esc_html( $tag->name );
         }, $tags );
         $tag_output = implode( ', ', $tag_names );
-        ?>
+    ?>
         <div class="top-head">
-        <div class="post-tags body-font fw-semibold text-medium mb-32">
-          <?php echo $tag_output; ?>
-        </div>
-      <?php endif; ?>
+          <div class="post-tags body-font fw-semibold text-medium mb-32">
+            <?php echo $tag_output; ?>
+          </div>
+        </div> 
+    <?php endif; ?>
+
 
       <h1 class="post-title mt-0 mb-16 heading-1 heading-font fw-bold"><?php the_title(); ?></h1>
 
@@ -34,7 +36,6 @@
       <div class="share-inline">
         <span class="body-font text-tiny fw-medium">SHARE</span>
         <?php echo do_shortcode('[addtoany]'); ?>
-      </div>
       </div>
 
       <?php if( has_post_thumbnail() ): ?>
