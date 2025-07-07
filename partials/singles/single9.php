@@ -64,8 +64,17 @@
 		</div>
     </div>
       <?php get_template_part( 'partials/post/contributors' ); ?>
-
       <div class="post-body">
+        <?php
+        $warning = get_post_meta(get_the_ID(), 'post_content_warning', true);
+        if (!empty($warning)) : ?>
+          <div>
+            <p>
+              <i class='bxr bx-alert-triangle'></i> 
+              <?php echo esc_html($warning); ?>
+            </p>
+          </div>
+        <?php endif; ?>
         <?php the_content(); ?>
         <?php get_template_part( 'partials/post/credits' ); ?>
       </div>

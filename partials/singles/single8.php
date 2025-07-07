@@ -36,7 +36,7 @@
           <?php
             $terms = get_the_terms( get_the_ID(), 'formats' );
             if ( !empty($terms) && !is_wp_error($terms) ) {
-                echo ' &nbsp; | &nbsp; ' . esc_html( $terms[0]->name );
+                echo ' &nbsp; / &nbsp; ' . esc_html( $terms[0]->name );
             }
           ?>
         </div>
@@ -51,6 +51,16 @@
 
 
       <div class="post-body">
+        <?php
+        $warning = get_post_meta(get_the_ID(), 'post_content_warning', true);
+        if (!empty($warning)) : ?>
+          <div>
+            <p>
+              <i class='bxr bx-alert-triangle'></i> 
+              <?php echo esc_html($warning); ?>
+            </p>
+          </div>
+        <?php endif; ?>
         <?php the_content(); ?>
         <?php get_template_part( 'partials/post/credits' ); ?>
       </div>

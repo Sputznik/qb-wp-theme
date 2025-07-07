@@ -64,6 +64,17 @@ add_filter('orbit_meta_box_vars', function ($meta_box) {
         'desc'   => ''
     );
 
+    $meta_box['post'][] = array(
+        'id'     => 'post-content-warning',
+        'title'  => 'Content Warning',
+        'fields' => array(
+          'post_content_warning' => array(
+           'type'  => 'textarea',
+            'text'  => 'Warning',
+          )
+        )
+      );
+
     return $meta_box;
 });
 
