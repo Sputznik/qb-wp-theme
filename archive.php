@@ -2,7 +2,7 @@
 get_header();
 ?>
 <div class="container">
-  <p class="heading-font heading-1 fw-bold text-center mb-32">
+  <h1 class="heading-font heading-1 fw-bold mb-32">
     <?php
       // Remove the 'Category:' or similar prefix from archive title
       $title = single_cat_title('', false);
@@ -11,7 +11,8 @@ get_header();
       }
       echo esc_html($title);
     ?>
-  </p>
+  </h1>
+  <hr class="mb-32"/>
   <?php if (have_posts()) : ?>
   <?php
     global $wp_query;
@@ -46,18 +47,17 @@ get_header();
 <?php endif; ?>
 </div>
 <!-- PAGINATION -->
-  <div class="container search-pagination">
-      <div class="container text-center">
-        <?php
-          the_posts_pagination(
-            array(
-              'mid_size' 	=> 1,
-              'prev_text' => __( '&laquo;' ),
-              'next_text' => __( '&raquo;' ),
-              'screen_reader_text' => __( ' ' ),
-            )
-          );
-        ?>
-      </div>
+  <div class="qb-search-pagination-wrapper">
+  <div class="qb-search-pagination">
+    <?php
+      the_posts_pagination([
+        'mid_size'  => 1,
+        'prev_text' => '<i class="bx bx-arrow-left-stroke"></i> <span>PREVIOUS</span>',
+        'next_text' => '<span>NEXT</span> <i class="bx bx-arrow-right-stroke"></i>',
+        'screen_reader_text' => ' ',
+      ]);
+    ?>
   </div>
+</div>
+
 <?php get_footer(); ?>

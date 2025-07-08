@@ -18,7 +18,7 @@
 <article class="orbit-card">
 	<div class="orbit-thumbnail <?php echo esc_attr($img_class); ?>" style='background-image: url("<?php echo esc_url($thumbnail[0]); ?>");'>
 		<?php if ( $format_term ) : ?>
-			<span class="orbit-badge text-regular body-font"><?php echo esc_html( $format_term->name ); ?></span>
+			<span class="orbit-badge text-small body-font"><?php echo esc_html( $format_term->name ); ?></span>
 		<?php endif; ?>
 		<a href="<?php the_permalink(); ?>"></a>
 	</div>

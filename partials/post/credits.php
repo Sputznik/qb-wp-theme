@@ -52,7 +52,7 @@ foreach ( $contributor_roles as $role_key => $role_label ) {
         <div class="mb-8">
           <?php if ( ! empty( $user['name'] ) && ! empty( $user['url'] ) ) : ?>
             <div>
-              <a rel="author" href="<?php echo esc_url( $user['url'] ); ?>" style="text-decoration: none; text-transform: capitalize;">
+              <a rel="author" href="<?php echo esc_url( $user['url'] ); ?>" style="text-decoration: underline; text-transform: capitalize;">
                 <?php echo esc_html( $user['name'] ); ?>
               </a>
               <?php if ( ! empty( $user['bio'] ) ) : ?>

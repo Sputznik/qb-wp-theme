@@ -6,6 +6,10 @@
   --space-default-3-half: 4px;
 }
 
+p {
+  margin-bottom: var(--space-default-half) !important;
+}
+
 .navbar {
   margin-bottom: var(--space-default);
 }
@@ -582,3 +586,113 @@
 .orbit-content {
   padding: 0 12px;
 }
+
+/* content warning  */
+.qb-content-warning {
+  padding: 16px 16px 6px;
+  background: #f5c0c0;
+  border: 1px solid #eb8181;
+  margin-bottom: 16px;
+}
+
+.qb-content-warning p {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* pagination */
+
+/* Outer flex layout for alignment */
+
+.qb-search-pagination {
+  position: relative;
+  max-width: 98%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qb-search-pagination .pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  font-family: "General Sans Variable", sans-serif;
+  font-size: 14px;
+}
+
+.qb-search-pagination .page-numbers {
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #666666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  transition: background-color 0.2s ease;
+}
+
+.qb-search-pagination .page-numbers:hover:not(.current) {
+  background-color: #f2f2f2;
+}
+
+.qb-search-pagination .page-numbers.current {
+  background-color: #eeeeee;
+  color: #222222;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.qb-search-pagination .page-numbers.prev,
+.qb-search-pagination .page-numbers.next {
+  font-weight: 500;
+  color: #aaaaaa;
+  gap: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.qb-search-pagination .page-numbers.prev {
+  left: 0;
+}
+
+.qb-search-pagination .page-numbers.next {
+  right: 0;
+}
+
+.qb-search-pagination .page-numbers.prev:hover,
+.qb-search-pagination .page-numbers.next:hover {
+  /* background-color: #f2f2f2; */
+}
+
+@media screen and (max-width: 480px) {
+  .qb-search-pagination-wrapper {
+    padding: 0.5rem;
+  }
+
+  .qb-search-pagination .pagination {
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .qb-search-pagination .page-numbers.prev,
+  .qb-search-pagination .page-numbers.next {
+    font-size: 12px;
+  }
+  .qb-search-pagination {
+    max-width: 100%;
+  }
+}
+
+/* tag.php styles */

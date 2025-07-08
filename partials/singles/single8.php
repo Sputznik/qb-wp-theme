@@ -54,7 +54,7 @@
         <?php
         $warning = get_post_meta(get_the_ID(), 'post_content_warning', true);
         if (!empty($warning)) : ?>
-          <div>
+          <div class="qb-content-warning">
             <p>
               <i class='bxr bx-alert-triangle'></i> 
               <?php echo esc_html($warning); ?>
