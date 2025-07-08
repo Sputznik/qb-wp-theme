@@ -36,13 +36,13 @@
 
 		<h2 class="orbit-headline heading-font heading-4 fw-bold"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-		<p class="orbit-strapline body-font text-small fw-normal"><?php echo get_the_excerpt(); ?></p>
+		<p class="orbit-strapline body-font text-regular fw-normal"><?php echo get_the_excerpt(); ?></p>
 
 		<?php if ( $category_term ) : 
 			$text_color = get_term_meta( $category_term->term_id, 'category_text_color', true );
 			$text_color = $text_color ? esc_attr( $text_color ) : '#14182D';
 		?>
-			<a class="orbit-tag body-font text-regular" href="<?php echo esc_url( get_category_link( $category_term->term_id ) ); ?>" style="background-color: <?php echo $text_color; ?>;">
+			<a class="orbit-tag body-font text-small" href="<?php echo esc_url( get_category_link( $category_term->term_id ) ); ?>" style="background-color: <?php echo $text_color; ?>;">
 				<?php echo esc_html( $category_term->name ); ?>
 			</a>
 		<?php endif; ?>
