@@ -6,6 +6,18 @@
   --space-default-3-half: 4px;
 }
 
+/* default font style copied from custom css */
+body {
+  font-family: "General Sans Variable", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
 p {
   margin-bottom: var(--space-default-half) !important;
 }
@@ -115,6 +127,7 @@ p {
     padding: 10px;
     background-color: transparent;
     border: none;
+    margin-top: 16px;
   }
 
   .qb-left,

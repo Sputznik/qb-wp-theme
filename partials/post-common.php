@@ -41,9 +41,12 @@
 		<?php if ( $category_term ) : 
 			$text_color = get_term_meta( $category_term->term_id, 'category_text_color', true );
 			$text_color = $text_color ? esc_attr( $text_color ) : '#14182D';
+
+			$bg_color = get_term_meta( $category_term->term_id, 'category_bg_color', true );
+			$bg_color = $bg_color ? esc_attr( $bg_color ) : '#D9D9D9';
 		?>
-			<a class="orbit-tag body-font text-small" href="<?php echo esc_url( get_category_link( $category_term->term_id ) ); ?>" style="background-color: <?php echo $text_color; ?>;">
-				<?php echo esc_html( $category_term->name ); ?>
+			<a class="orbit-tag body-font text-small" href="<?php echo esc_url( get_category_link( $category_term->term_id ) ); ?>" style="background-color: <?php echo $bg_color; ?>;">
+				<span style="color: <?php echo $text_color; ?>;"><?php echo esc_html( $category_term->name ); ?></span>
 			</a>
 		<?php endif; ?>
 	</div>

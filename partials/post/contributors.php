@@ -3,7 +3,7 @@ $post_id = get_the_ID();
 
 $contributor_roles = array(
   'author'       => 'Author',
-  'editor'       => 'Editor',
+  // 'editor'       => 'Editor',
   'illustrator'  => 'Illustrator',
   'photographer' => 'Photographer',
   // 'producer'     => 'Producer'
