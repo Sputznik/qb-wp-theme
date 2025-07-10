@@ -3,6 +3,7 @@
 	$inc_files = array(
 		'logo.php',
 		'single-post.php',
+		'back-to-top.php',
 		// 'taxonomy.php',
 	);
 

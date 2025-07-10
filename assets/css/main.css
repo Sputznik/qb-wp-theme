@@ -148,7 +148,7 @@ p {
   .navbar-nav > li > a {
     background-color: #eeeeee;
     color: #000 !important;
-    font-size: 12px;
+    font-size: 16px !important;
     padding: 10px 15px;
     text-decoration: none;
     /* display: inline-block; */

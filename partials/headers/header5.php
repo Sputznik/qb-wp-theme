@@ -34,7 +34,9 @@
             <div class="qb-center">
                 <div class="qb-logo">
                 <?php do_action('sp_logo'); ?>
-                <div class="site-tagline"><?php echo get_bloginfo( 'description' ); ?></div>
+                <a href="<?php echo get_bloginfo('url'); ?>" style="text-decoration: none;">
+                    <div class="site-tagline"><?php echo get_bloginfo( 'description' ); ?></div>
+                </a>
                 </div>
             </div>
 
@@ -47,8 +49,9 @@
     </div>
 
     
-
-    <?php do_action('sp_nav_menu'); ?>
+    <div class="body-font text-small">
+        <?php do_action('sp_nav_menu'); ?>
+    </div>
   </div>
 </nav>
 
