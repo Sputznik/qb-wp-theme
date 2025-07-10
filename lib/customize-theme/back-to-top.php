@@ -47,14 +47,6 @@
                 window.scrollTo({top: 0, behavior: 'smooth'});
             });
         });
-        // jQuery(document).ready(function($) {
-        //     $('.nav .dropdown-toggle').on('click', function(e) {
-        //         e.preventDefault();
-        //         var $parent = $(this).parent();
-        //         $parent.toggleClass('open');
-        //         $parent.find('.dropdown-menu').first().stop(true, true).slideToggle(200);
-        //     });
-        // });
         </script>
         <?php
     }
