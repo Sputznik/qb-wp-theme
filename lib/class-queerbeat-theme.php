@@ -68,6 +68,23 @@ class QUEERBEAT_THEME {
         ]);
     });
 
+    add_action('admin_enqueue_scripts', 'mlt_enqueue_admin_scripts');
+    function mlt_enqueue_admin_scripts($hook) {
+        if ($hook !== 'post.php' && $hook !== 'post-new.php') return;
+
+        wp_enqueue_script('jquery-ui-autocomplete');
+        wp_enqueue_script('mlt-autocomplete', QUEERBEAT_THEME_URI . '/assets/js/mlt-autocomplete.js', array('jquery', 'jquery-ui-autocomplete'), QUEERBEAT_WP_THEME_VERSION);
+
+        global $post;
+        wp_localize_script('mlt-autocomplete', 'mltAjax', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce'    => wp_create_nonce('mlt_autocomplete_nonce'),
+            'current_post_id' => isset($post->ID) ? $post->ID : 0
+        ]);
+
+    }
+
+
   }
 
   function assets() {
