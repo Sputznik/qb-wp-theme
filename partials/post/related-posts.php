@@ -5,8 +5,8 @@
  */
 $post_id = get_the_ID();
 
-$related_post_1 = get_post_meta($post_id, 'more_like_this_1', true);
-$related_post_2 = get_post_meta($post_id, 'more_like_this_2', true);
+$related_post_1 = get_post_meta($post_id, 'story1', true);
+$related_post_2 = get_post_meta($post_id, 'story2', true);
 
 // Filter out empty or invalid values
 $related_ids = array_filter([$related_post_2, $related_post_1]);
