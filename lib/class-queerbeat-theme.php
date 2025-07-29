@@ -39,7 +39,7 @@ class QUEERBEAT_THEME {
     
     // Load scripts (color picker + live icon preview)
     add_action('admin_enqueue_scripts', function ($hook) {
-        if (strpos($hook, 'edit-tags.php') !== false || strpos($hook, 'term.php') !== false) {
+        if (strpos($hook, 'edit-tags.php') !== false || strpos($hook, 'term.php') !== false || $hook === 'post.php' || $hook === 'post-new.php') {
             wp_enqueue_style('wp-color-picker');
             wp_enqueue_script('wp-color-picker');
             wp_enqueue_style('boxicons', 'https://pro.boxicons.com/fonts/3.0.1/basic/rounded/400/boxicons-rounded.min.css?sig=7128fd87b9be0e56ca3bc7c681f7f01f6da119ff687204ab230f0ed33d3f1304');
@@ -81,6 +81,24 @@ class QUEERBEAT_THEME {
             'nonce'    => wp_create_nonce('mlt_autocomplete_nonce'),
             'current_post_id' => isset($post->ID) ? $post->ID : 0
         ]);
+        wp_enqueue_style('jquery-ui-css', 'https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css');
+
+        wp_add_inline_style('jquery-ui-css', '
+            .mlt-tag {
+                background: #e1ecf4;
+                border-radius: 3px;
+                padding: 3px 6px;
+                margin: 2px 2px 0 0;
+                display: inline-block;
+            }
+            .mlt-tag .mlt-remove-tag {
+                color: red;
+                margin-left: 6px;
+                text-decoration: none;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        ');
 
     }
 

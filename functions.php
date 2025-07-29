@@ -21,6 +21,7 @@
         'lib/shortcodes/qb-themes.php',
         'lib/qb-user-cf.php',
         'lib/qb-more-like-this-cf.php',
+        'lib/qb-contributors-cf.php',
     );
 
     foreach ($inc_files as $inc_file) {
