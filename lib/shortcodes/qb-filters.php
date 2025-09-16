@@ -8,8 +8,11 @@ function qb_filters_shortcode($atts) {
         'pagination_style' => 'default',
     ], $atts, 'qb_filters');
 
+
     $selected_format = isset($_GET['formats']) ? sanitize_text_field($_GET['formats']) : '';
+    // $selected_format = get_query_var('formats') ? sanitize_text_field(get_query_var('formats')) : '';
     $selected_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+    // $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
     $format_terms = get_terms([
         'taxonomy' => 'formats',
@@ -38,6 +41,7 @@ function qb_filters_shortcode($atts) {
     $shortcode .= ' posts_per_page="' . esc_attr($atts['posts_per_page']) . '"';
     $shortcode .= ' pagination="' . esc_attr($atts['pagination']) . '"';
     $shortcode .= ' pagination_style="' . esc_attr($atts['pagination_style']) . '"';
+    // $shortcode .= ' paged="' . esc_attr($paged) . '"';
 
     if (!empty($tax_query_string)) {
         $shortcode .= ' tax_query="' . esc_attr($tax_query_string) . '"';
@@ -47,15 +51,19 @@ function qb_filters_shortcode($atts) {
 
     $orbit_output = do_shortcode($shortcode);
 
+    // echo '<pre>';
+    // print_r($shortcode);
+    // echo '</pre>';
+
     ob_start();
     ?>
 
-    <div class="qb-filters-wrapper container">
+    <div class="qb-filters-wrapper">
 
         <!-- FILTER SECTION -->
         <div class="filters-wrapper mb-32">
             <div class="body-font text-tiny">FILTERS</div>
-            <form method="GET" action="" class="filters-form">
+            <form method="GET" action="<?php echo esc_url( get_permalink() ); ?>" class="filters-form">
                 <select name="formats" class="filter-select text-tiny" onchange="this.form.submit()">
                     <option value="">BY FORMAT</option>
                     <?php foreach ($format_terms as $term) : ?>
