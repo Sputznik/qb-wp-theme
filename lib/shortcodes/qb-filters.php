@@ -64,8 +64,8 @@ function qb_filters_shortcode($atts) {
         <div class="filters-wrapper mb-32">
             <div class="body-font text-tiny">FILTERS</div>
             <form method="GET" action="<?php echo esc_url( get_permalink() ); ?>" class="filters-form">
-                <select name="formats" class="filter-select text-tiny" onchange="this.form.submit()">
-                    <option value="">BY FORMAT</option>
+                <select name="formats" class="filter-select text-tiny">
+                    <option value="">ANY FORMAT</option>
                     <?php foreach ($format_terms as $term) : ?>
                         <option value="<?php echo esc_attr($term->slug); ?>" <?php selected($selected_format, $term->slug); ?>>
                             <?php echo esc_html($term->name); ?>
@@ -73,14 +73,16 @@ function qb_filters_shortcode($atts) {
                     <?php endforeach; ?>
                 </select>
 
-                <select name="category" class="filter-select text-tiny" onchange="this.form.submit()">
-                    <option value="">BY THEME</option>
+                <select name="category" class="filter-select text-tiny">
+                    <option value="">ANY THEME</option>
                     <?php foreach ($theme_terms as $term) : ?>
                         <option value="<?php echo esc_attr($term->slug); ?>" <?php selected($selected_category, $term->slug); ?>>
                             <?php echo esc_html($term->name); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
+
+                <button type="submit" class="apply-filters-button">Apply</button>
             </form>
 
             <?php if ($selected_format || $selected_category): ?>
