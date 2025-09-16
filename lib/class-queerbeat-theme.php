@@ -114,6 +114,7 @@ class QUEERBEAT_THEME {
     wp_enqueue_style('qb-theme-shortcode', QUEERBEAT_THEME_URI . '/assets/css/qb-theme-shortcode.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
     wp_enqueue_style('qb-theme-singles', QUEERBEAT_THEME_URI . '/assets/css/qb-single-templates.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
     wp_enqueue_style('qb-theme-typography', QUEERBEAT_THEME_URI . '/assets/css/qb-typography.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
+    wp_enqueue_style('qb-filters-shortcode', QUEERBEAT_THEME_URI . '/assets/css/qb-filters-shortcode.css', array('sp-core-style'), QUEERBEAT_WP_THEME_VERSION);
   }
 
 }

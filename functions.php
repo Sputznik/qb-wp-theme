@@ -19,6 +19,7 @@
         'lib/qb-orbit-cf.php',
         'lib/qb-category-cf.php',
         'lib/shortcodes/qb-themes.php',
+        'lib/shortcodes/qb-filters.php',
         'lib/qb-user-cf.php',
         'lib/qb-more-like-this-cf.php',
         'lib/qb-contributors-cf.php',
