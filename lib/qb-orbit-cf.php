@@ -37,34 +37,6 @@ add_filter('orbit_meta_box_vars', function ($meta_box) {
       );
 
     $meta_box['post'][] = array(
-        'id'     => 'post-contributors',
-        'title'  => 'Contributors',
-        'fields' => array(
-            'author' => array(
-                'type'    => 'text',
-                'text'    => 'Author User IDs (comma separated)',
-            ),
-            'editor' => array(
-                'type'    => 'text',
-                'text'    => 'Editor User IDs (comma separated)',
-            ),
-            'illustrator' => array(
-                'type'    => 'text',
-                'text'    => 'Illustrator User IDs (comma separated)',
-            ),
-            'photographer' => array(
-                'type'    => 'text',
-                'text'    => 'Photographer User IDs (comma separated)',
-            ),
-            'producer' => array(
-                'type'    => 'text',
-                'text'    => 'Producer User IDs (comma separated)',
-            )
-        ),
-        'desc'   => ''
-    );
-
-    $meta_box['post'][] = array(
         'id'     => 'post-content-warning',
         'title'  => 'Content Warning',
         'fields' => array(
