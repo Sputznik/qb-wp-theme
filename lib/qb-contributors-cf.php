@@ -13,7 +13,7 @@ add_action('add_meta_boxes', function () {
 function render_contributors_meta_box($post) {
     wp_nonce_field('contributors_nonce_action', 'contributors_nonce');
 
-    $roles = ['author', 'editor', 'illustrator', 'photographer', 'producer'];
+    $roles = ['author', 'editor', 'illustrator', 'photographer', 'producer','copyeditor'];
 
     foreach ($roles as $role) {
         $stored_ids = get_post_meta($post->ID,  $role, true);
@@ -55,7 +55,7 @@ add_action('save_post', function ($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!current_user_can('edit_post', $post_id)) return;
 
-    $roles = ['author', 'editor', 'illustrator', 'photographer', 'producer'];
+    $roles = ['author', 'editor', 'illustrator', 'photographer', 'producer','copyeditor'];
 
     foreach ($roles as $role) {
         if (isset($_POST[$role])) {
