@@ -25,6 +25,7 @@
         'lib/qb-contributors-cf.php',
         'lib/qb-fii-base.php',
         'lib/qb-fii-profile-builder.php',
+        'lib/qb-cookie-expiry.php'
     );
 
     foreach ($inc_files as $inc_file) {
