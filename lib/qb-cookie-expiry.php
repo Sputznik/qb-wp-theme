@@ -1,5 +1,5 @@
 <?php
-add_filter( 'auth_cookie_expiration', 'qrb_subscriber_auth_cookie_expiration', 99, 3 );
+add_filter( 'auth_cookie_expiration', 'qrb_subscriber_auth_cookie_expiration', 10, 3 );
 
 function qrb_subscriber_auth_cookie_expiration( $expiration, $user_id, $remember ) {
     $user = get_userdata( $user_id );
@@ -23,8 +23,6 @@ function qrb_persist_subscriber_cookies( $cookie, $expire, $expiration, $user_id
         return;
     }
 
-    error_log( 'Persisting subscriber cookies for user ID: ' . $user_id . ', scheme: ' . $scheme . ', cookie: ' . $cookie . ', expire: ' . $expire . ', expiration: ' . $expiration );
-
     if ( 0 === $expire ) {
         $forced_expiry = time() + ( 30 * DAY_IN_SECONDS );
         
@@ -44,4 +42,4 @@ function qrb_persist_subscriber_cookies( $cookie, $expire, $expiration, $user_id
 }
 
 add_action( 'set_auth_cookie', 'qrb_persist_subscriber_cookies', 10, 5 );
-// add_action( 'set_logged_in_cookie', 'qrb_persist_subscriber_cookies', 10, 5 );
+add_action( 'set_logged_in_cookie', 'qrb_persist_subscriber_cookies', 10, 5 );
