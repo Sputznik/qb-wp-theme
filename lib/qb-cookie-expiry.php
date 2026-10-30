@@ -19,5 +19,5 @@ function qrb_subscriber_auth_cookie_expiration( $expiration, $user_id, $remember
 add_filter( 'wpa_success_link_msg', 'qrb_custom_login_message' );
 
 function qrb_custom_login_message() {
-    return 'Check your email for the login link. Click here to open your <a href="https://mail.google.com/mail/u/0/#search/queerbeat.org" target="_blank" rel="noopener noreferrer">gmail inbox</a>';
+    return 'Check your email for the login link. Click here to open your <a href="https://mail.google.com/mail/u/0/#search/from%3A+hello%40queerbeat.org+in%3Aanywhere+newer_than%3A1h" target="_blank" rel="noopener noreferrer">gmail inbox</a>';
 }
